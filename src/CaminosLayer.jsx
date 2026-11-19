@@ -22,9 +22,8 @@ const SVG_LOMO = `<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://
 const makeIconLomo = () => window.L.divIcon({ className: "", html: SVG_LOMO, iconSize: [20, 20], iconAnchor: [10, 12] });
 
 function fmt(ms) {
-  return new Date(ms).toLocaleString("es-AR", {
+  return new Date(ms).toLocaleDateString("es-AR", {
     day: "2-digit", month: "2-digit",
-    hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false,
   });
 }
 

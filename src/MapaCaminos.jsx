@@ -26,7 +26,8 @@ export default function MapaCaminos() {
   useEffect(() => {
     if (!ready || !contRef.current) return;
     const L = window.L;
-    const m = L.map(contRef.current).setView(CENTRO, ZOOM);
+    const m = L.map(contRef.current, { zoomControl: false }).setView(CENTRO, ZOOM);
+    L.control.zoom({ position: "bottomleft" }).addTo(m);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "© OpenStreetMap",
     }).addTo(m);
